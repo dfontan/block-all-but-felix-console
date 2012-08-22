@@ -20,8 +20,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-@SlingFilter(scope = SlingFilterScope.REQUEST, order = 0, generateComponent = false)
-@Component(immediate = true)
+@SlingFilter(scope = SlingFilterScope.REQUEST, order = 0, generateComponent = false)//@Activate doesn't pick up if @SlingFilter generates Component.
+@Component(immediate = false, enabled = false)
 public class BlockAllButFelixFilter implements Filter {
 
     private static final Logger log = LoggerFactory.getLogger(BlockAllButFelixFilter.class);
