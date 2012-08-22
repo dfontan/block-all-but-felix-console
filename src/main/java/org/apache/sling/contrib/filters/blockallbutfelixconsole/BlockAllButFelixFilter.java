@@ -49,7 +49,7 @@ public class BlockAllButFelixFilter implements Filter {
                 httpResponse.setContentType("text/plain; charset=utf-8");
                 httpResponse.setCharacterEncoding("utf-8");
                 final double duration =  (System.currentTimeMillis() - componentStarted) / 1000.0;
-                httpResponse.getWriter().format("deployment is on going for %f secs. try again later.\n", duration);
+                httpResponse.getWriter().format("deployment is in process for %f secs. try again a few minutes later.\n", duration);
                 httpResponse.flushBuffer();
                 return;
                 
