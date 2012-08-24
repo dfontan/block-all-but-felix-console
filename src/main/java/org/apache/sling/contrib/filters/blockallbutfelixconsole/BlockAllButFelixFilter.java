@@ -46,6 +46,7 @@ public class BlockAllButFelixFilter implements Filter {
             final HttpServletResponse httpResponse = (HttpServletResponse) response;
             
             if (!httpRequest.getPathInfo().startsWith("/system/console/")) {
+                httpResponse.setStatus(503);
                 httpResponse.setContentType("text/plain; charset=utf-8");
                 httpResponse.setCharacterEncoding("utf-8");
                 final double duration =  (System.currentTimeMillis() - componentStarted) / 1000.0;
